@@ -1,0 +1,6 @@
+name="exifoca"
+version="1.0"
+description="Read EXIF data from JPEG files"
+archive(byte)="exifoca.cma"
+archive(native)="exifoca.cmxa"
+linkopts = ""

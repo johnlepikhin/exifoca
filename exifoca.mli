@@ -50,3 +50,6 @@ type t =
 
 (* Accepts content of JPEG file as an argument *)
 val of_string : string -> t list
+
+(* Accepts path to JPEG file as an argument *)
+val of_file : string -> t list

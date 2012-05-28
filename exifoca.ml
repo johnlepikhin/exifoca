@@ -352,3 +352,21 @@ let of_string s =
 	in
 	loop 2;
 	!tags
+
+let of_file s =
+	let ch = open_in s in
+	let r = Buffer.create 100000 in
+	let s = String.create 100000 in
+	let rec loop () =
+		let rb = input ch s 0 100000 in
+		if rb = 0 then
+			()
+		else
+		begin
+			Buffer.add_substring r s 0 rb;
+			loop ()
+		end
+	in
+	loop ();
+	close_in ch;
+	of_string (Buffer.contents r)
